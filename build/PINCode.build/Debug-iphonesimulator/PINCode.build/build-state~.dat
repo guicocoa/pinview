@@ -1,0 +1,194 @@
+TPINCode
+v7
+r0
+t304701399.772655
+cCheck dependencies
+cProcessInfoPlistFile /Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/Info.plist PINCode-Info.plist
+cProcessPCH /var/folders/+t/+tuxKKdsEQ4oW3MHxnKxT++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PINCode_Prefix-fcwyrqgiptcjjoerneyhpeirpnbp/PINCode_Prefix.pch.gch PINCode_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/main.o /Users/calebdavenport/Desktop/PINCode/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/PCAppDelegate.o /Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C7015130000000000000132
+t1282413843
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m
+c000000004C7928560000000000000289
+t1283008598
+s649
+i"PINCodeAppDelegate.h"
+
+N/Users/calebdavenport/Desktop/PINCode/Classes/PINCodeAppDelegate.h
+c000000004C7923DF0000000000000148
+t1283007455
+s328
+i<UIKit/UIKit.h>
+
+N/Users/calebdavenport/Desktop/PINCode/Classes/PINCodeAppDelegate.m
+c000000004C7923DF00000000000009C1
+t1283007455
+s2497
+i"PINCodeAppDelegate.h"
+
+N/Users/calebdavenport/Desktop/PINCode/MainWindow.xib
+c000000004C7925DF000000000000207A
+t1283007967
+s8314
+
+N/Users/calebdavenport/Desktop/PINCode/PINCode_Prefix.pch
+c000000004C7923DF00000000000000B7
+t1283007455
+s183
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app
+t2
+s0
+
+N/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app.dSYM
+t2
+s0
+
+N/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/Info.plist
+t1283008598
+s597
+
+N/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/MainWindow.nib
+t2
+s0
+
+N/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/PINCode
+t2
+s0
+
+N/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/PkgInfo
+t1283008598
+s8
+
+N/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/PCAppDelegate.o
+t2
+s0
+
+N/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/PINCode.LinkFileList
+c000000004C79285600000000000000FB
+t1283008598
+s251
+
+N/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/PINCodeAppDelegate.o
+t2
+s0
+
+N/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/main.o
+t1283008599
+s6300
+
+N/Users/calebdavenport/Desktop/PINCode/main.m
+c000000004C7923DF000000000000016A
+t1283007455
+s362
+i<UIKit/UIKit.h>
+
+N/var/folders/+t/+tuxKKdsEQ4oW3MHxnKxT++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PINCode_Prefix-fcwyrqgiptcjjoerneyhpeirpnbp/PINCode_Prefix.pch.gch
+t1283008599
+s10212912
+
+NPINCode-Info.plist
+c000000004C7928200000000000000387
+t1283008544
+s903
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies304701398#304701398#0(0"0(0#1#0"4231192#0"0#
+
+CCompileC build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/PCAppDelegate.o /Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s304701399.604412
+e304701399.768577
+r0
+xCompileC
+xbuild/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/PCAppDelegate.o
+x/Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m:13: error: no declaration of property 'window' found in the interface
+lSLF07#2@69"Compile /Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m304701399#304701399#0(132"/Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m:13: error: no declaration of property 'window' found in the interface1(4@58"No declaration of property 'window' found in the interface304701399#0#132#0(6@61"/Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m304701398#13#0#13#0#0"0(0#0#61"/Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m2416869312#1916"    cd /Users/calebdavenport/Desktop/PINCode    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-generated-files.hmap -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-own-target-headers.hmap -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-all-target-headers.hmap -iquote /Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-project-headers.hmap -F/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator -I/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/include -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/DerivedSources/i386 -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/DerivedSources -include /var/folders/+t/+tuxKKdsEQ4oW3MHxnKxT++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PINCode_Prefix-fcwyrqgiptcjjoerneyhpeirpnbp/PINCode_Prefix.pch -c /Users/calebdavenport/Desktop/PINCode/Classes/PCAppDelegate.m -o /Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/PCAppDelegate.o1#
+
+CCompileC build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/PINCodeAppDelegate.o /Users/calebdavenport/Desktop/PINCode/Classes/PINCodeAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/main.o /Users/calebdavenport/Desktop/PINCode/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s304701399.602776
+e304701399.772548
+r1
+xCompileC
+xbuild/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/main.o
+x/Users/calebdavenport/Desktop/PINCode/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@52"Compile /Users/calebdavenport/Desktop/PINCode/main.m304701399#304701399#0(0"0(0#0#44"/Users/calebdavenport/Desktop/PINCode/main.m4231192#1890"    cd /Users/calebdavenport/Desktop/PINCode    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-generated-files.hmap -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-own-target-headers.hmap -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-all-target-headers.hmap -iquote /Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-project-headers.hmap -F/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator -I/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/include -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/DerivedSources/i386 -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/DerivedSources -include /var/folders/+t/+tuxKKdsEQ4oW3MHxnKxT++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PINCode_Prefix-fcwyrqgiptcjjoerneyhpeirpnbp/PINCode_Prefix.pch -c /Users/calebdavenport/Desktop/PINCode/main.m -o /Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/calebdavenport/Desktop/PINCode/MainWindow.xib
+r0
+
+CGenerateDSYMFile /Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app.dSYM /Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/PINCode
+r0
+
+CLd /Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/PINCode normal i386
+r0
+
+CProcessInfoPlistFile /Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/Info.plist PINCode-Info.plist
+s304701398.452699
+e304701398.503307
+r1
+xProcessInfoPlistFile
+x/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/Info.plist
+xPINCode-Info.plist
+lSLF07#2@26"Process PINCode-Info.plist304701398#304701398#0(0"0(0#0#56"/Users/calebdavenport/Desktop/PINCode/PINCode-Info.plist4231192#476"    cd /Users/calebdavenport/Desktop/PINCode    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility PINCode-Info.plist -genpkginfo /Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app/Info.plist0#
+
+CProcessPCH /var/folders/+t/+tuxKKdsEQ4oW3MHxnKxT++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PINCode_Prefix-fcwyrqgiptcjjoerneyhpeirpnbp/PINCode_Prefix.pch.gch PINCode_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s304701398.503553
+e304701399.602640
+r1
+xProcessPCH
+x/var/folders/+t/+tuxKKdsEQ4oW3MHxnKxT++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PINCode_Prefix-fcwyrqgiptcjjoerneyhpeirpnbp/PINCode_Prefix.pch.gch
+xPINCode_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@29"Precompile PINCode_Prefix.pch304701398#304701399#0(0"0(0#0#56"/Users/calebdavenport/Desktop/PINCode/PINCode_Prefix.pch4231192#1783"    cd /Users/calebdavenport/Desktop/PINCode    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-generated-files.hmap -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-own-target-headers.hmap -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-all-target-headers.hmap -iquote /Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/PINCode-project-headers.hmap -F/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator -I/Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/include -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/DerivedSources/i386 -I/Users/calebdavenport/Desktop/PINCode/build/PINCode.build/Debug-iphonesimulator/PINCode.build/DerivedSources -c /Users/calebdavenport/Desktop/PINCode/PINCode_Prefix.pch -o /var/folders/+t/+tuxKKdsEQ4oW3MHxnKxT++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PINCode_Prefix-fcwyrqgiptcjjoerneyhpeirpnbp/PINCode_Prefix.pch.gch0#
+
+CTouch /Users/calebdavenport/Desktop/PINCode/build/Debug-iphonesimulator/PINCode.app
+r0
+
