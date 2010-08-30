@@ -1,3 +1,16 @@
+ABOUT:
+====
+
+This project gives you a drop-in PIN code entry screen that looks like the entry screen seen in Settings.app.
+
+Features:
+----
+- native iOS look and feel
+- mask pin entry with bullet characters or optionally show the actual input
+- provide your own theme by providing a custom NIB file
+- provide custom text to be displayed on the PIN entry view
+- delegate methods allow you to verify the user-provided PIN code
+
 ADD TO YOUR PROJECT:
 ====
 
