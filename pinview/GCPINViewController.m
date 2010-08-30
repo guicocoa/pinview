@@ -82,6 +82,11 @@
 	[errorLabel setHidden:YES];
 }
 - (void)presentViewFromViewController:(UIViewController *)controller animated:(BOOL)animated {
+	if (self.delegate == nil) {
+		[[NSException exceptionWithName:NSInternalInconsistencyException
+								 reason:@"You failed to provide a delegate before attempting to show the PIN code view"
+							   userInfo:nil] raise];
+	}
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self];
 	[controller presentModalViewController:navController animated:animated];
 	[navController release];

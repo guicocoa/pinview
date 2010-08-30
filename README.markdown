@@ -2,7 +2,7 @@ ADD TO YOUR PROJECT:
 ====
 
 - open the PINView Xcode project
-- drag the pinview group into your project
+- drag the pinview group into your project (make sure copy files is selected)
 
 USE THIS CODE:
 ====
