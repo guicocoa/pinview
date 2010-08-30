@@ -15,13 +15,13 @@ EXAMPLE:
 ====
 Delegate Method
 ----
-  - (BOOL)isPINCodeValid:(NSString *)PIN {
-  	return [PIN isEqualToString:@"1234"];
-  }
+    - (BOOL)isPINCodeValid:(NSString *)PIN {
+      return [PIN isEqualToString:@"1234"];
+    }
 Create View
 ----
     GCPINViewController *pinView = [[GCPINViewController alloc] initWithNibName:@"PINViewDefault" bundle:nil];
     [pinView setDelegate:self];
-  [pinView setPromptText:@"Enter Your PIN"];
-  [pinView setTitleText:@"PIN Code"];
-  [pinView setErrorText:@"Awww You Suck"];
+    [pinView setPromptText:@"Enter Your PIN"];
+    [pinView setTitleText:@"PIN Code"];
+    [pinView setErrorText:@"Awww You Suck"];
