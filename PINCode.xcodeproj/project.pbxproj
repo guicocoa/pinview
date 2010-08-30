@@ -27,11 +27,11 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PINCode_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINCode_Prefix.pch; sourceTree = "<group>"; };
-		3B90F7BC122961790013322F /* GCPINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPINViewController.h; sourceTree = "<group>"; };
-		3B90F7BD122961790013322F /* GCPINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPINViewController.m; sourceTree = "<group>"; };
-		3B90F8101229A3090013322F /* PINViewDefault.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PINViewDefault.xib; sourceTree = "<group>"; };
-		3B90F8131229A4150013322F /* PINBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PINBox@2x.png"; sourceTree = "<group>"; };
-		3B90F8151229B3420013322F /* PINBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PINBox.png; sourceTree = "<group>"; };
+		3B90F7BC122961790013322F /* GCPINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCPINViewController.h; path = pinview/GCPINViewController.h; sourceTree = "<group>"; };
+		3B90F7BD122961790013322F /* GCPINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCPINViewController.m; path = pinview/GCPINViewController.m; sourceTree = "<group>"; };
+		3B90F8101229A3090013322F /* PINViewDefault.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PINViewDefault.xib; path = pinview/PINViewDefault.xib; sourceTree = "<group>"; };
+		3B90F8131229A4150013322F /* PINBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PINBox@2x.png"; path = "pinview/PINBox@2x.png"; sourceTree = "<group>"; };
+		3B90F8151229B3420013322F /* PINBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PINBox.png; path = pinview/PINBox.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PINCode-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PINCode-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,8 +54,6 @@
 			children = (
 				1D3623240D0F684500981E51 /* PCAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PCAppDelegate.m */,
-				3B90F7BC122961790013322F /* GCPINViewController.h */,
-				3B90F7BD122961790013322F /* GCPINViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -71,6 +69,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				3B5DE424122C4A1900550A31 /* pinview */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -93,9 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				8D1107310486CEB800E47090 /* PINCode-Info.plist */,
-				3B90F8101229A3090013322F /* PINViewDefault.xib */,
-				3B90F8131229A4150013322F /* PINBox@2x.png */,
-				3B90F8151229B3420013322F /* PINBox.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -108,6 +104,18 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B5DE424122C4A1900550A31 /* pinview */ = {
+			isa = PBXGroup;
+			children = (
+				3B90F7BC122961790013322F /* GCPINViewController.h */,
+				3B90F7BD122961790013322F /* GCPINViewController.m */,
+				3B90F8101229A3090013322F /* PINViewDefault.xib */,
+				3B90F8131229A4150013322F /* PINBox@2x.png */,
+				3B90F8151229B3420013322F /* PINBox.png */,
+			);
+			name = pinview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
