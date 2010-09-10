@@ -34,36 +34,45 @@
 
 @implementation GCPINViewController
 
-@synthesize titleText;
-@synthesize promptText;
+@synthesize messageText, errorText;
 @synthesize secureTextEntry;
-@synthesize errorText;
 @synthesize delegate;
 
+#pragma mark -
+#pragma mark initialize
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+		self.messageText = nil;
+		self.errorText = nil;
+		self.title = nil;
+		self.delegate = nil;
+		self.secureTextEntry = YES;
+	}
+	return self;
+}
+
+#pragma mark -
+#pragma mark view lifecycle
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	
 	[pinFields release];
 	pinFields = nil;
-	
-	self.titleText = nil;
-	self.promptText = nil;
-	self.errorText = nil;
 }
 - (void)dealloc {
 	[pinFields release];
 	pinFields = nil;
 	
-	self.titleText = nil;
-	self.promptText = nil;
 	self.errorText = nil;
+	self.messageText = nil;
 	
     [super dealloc];
 }
+
+#pragma mark -
+#pragma mark view lifecycle
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	self.secureTextEntry = YES;
 	
 	pinFields = [[NSArray alloc] initWithObjects:
 				 fieldOneLabel, fieldTwoLabel,
@@ -76,11 +85,13 @@
 	[inputField setHidden:YES];
 	[inputField becomeFirstResponder];
 	
-	[self setTitle:[self titleText]];
-	[promptLabel setText:[self promptText]];
-	[errorLabel setText:[self errorText]];
+	[messageLabel setText:messageText];
+	[errorLabel setText:errorText];
 	[errorLabel setHidden:YES];
 }
+
+#pragma mark -
+#pragma mark show view controller
 - (void)presentViewFromViewController:(UIViewController *)controller animated:(BOOL)animated {
 	if (self.delegate == nil) {
 		[[NSException exceptionWithName:NSInternalInconsistencyException
@@ -91,6 +102,9 @@
 	[controller presentModalViewController:navController animated:animated];
 	[navController release];
 }
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 	if ([string length] && [[textField text] length] == 4) {
 		return NO;
@@ -106,9 +120,29 @@
 		if (valid) {
 			[self dismissModalViewControllerAnimated:YES];
 		}
+		else {
+			[self setPINText:@""];
+		}
 	}
 	
 	return YES;
+}
+
+#pragma mark -
+#pragma mark cutsom accessors
+- (void)setMessageText:(NSString *)text {
+	if (messageLabel != nil) {
+		messageLabel.text = text;
+	}
+	[messageText release];
+	messageText = [text copy];
+}
+- (void)setErrorText:(NSString *)text {
+	if (errorLabel != nil) {
+		errorLabel.text = text;
+	}
+	[errorText release];
+	errorText = [text copy];
 }
 
 @end
