@@ -126,7 +126,7 @@
 					<object class="IBUITextField" id="432856056">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{111, 284}, {97, 31}}</string>
+						<string key="NSFrame">{{8, 9}, {97, 31}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -381,12 +381,12 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="32991619"/>
 							<reference ref="846819615"/>
 							<reference ref="664316025"/>
-							<reference ref="432856056"/>
 							<reference ref="1000380759"/>
 							<reference ref="1029500653"/>
 							<reference ref="71954609"/>
 							<reference ref="611576927"/>
 							<reference ref="192312236"/>
+							<reference ref="432856056"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -473,6 +473,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string>22.IBPluginDependency</string>
 					<string>3.IBPluginDependency</string>
 					<string>9.IBPluginDependency</string>
+					<string>9.IBViewBoundsToFrameTransform</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -487,6 +488,9 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABC3gAAw5yAAA</bytes>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -525,6 +529,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string>fieldTwoLabel</string>
 							<string>inputField</string>
 							<string>messageLabel</string>
+							<string>userInfo</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -536,6 +541,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string>UILabel</string>
 							<string>UITextField</string>
 							<string>UILabel</string>
+							<string>id</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -550,6 +556,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string>fieldTwoLabel</string>
 							<string>inputField</string>
 							<string>messageLabel</string>
+							<string>userInfo</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -584,6 +591,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<object class="IBToOneOutletInfo">
 								<string key="name">messageLabel</string>
 								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">userInfo</string>
+								<string key="candidateClassName">id</string>
 							</object>
 						</object>
 					</object>

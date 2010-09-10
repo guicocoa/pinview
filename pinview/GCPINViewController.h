@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GCPINViewController;
 @protocol GCPINViewControllerDelegate <NSObject>
 @required
-- (BOOL)isPINCodeValid:(NSString *)PIN;
+- (BOOL)pinView:(GCPINViewController *)pinView validateCode:(NSString *)code;
 @end
 
 @interface GCPINViewController : UIViewController <UITextFieldDelegate> {
@@ -27,22 +28,22 @@
 	NSArray *pinFields;
 	NSString *messageText;
 	NSString *errorText;
+	NSString *PINText;
 	
 	BOOL secureTextEntry;
 	
 	id<GCPINViewControllerDelegate> delegate;
+	
+	id userInfo;
 }
 
 @property (nonatomic, copy) NSString *messageText;
 @property (nonatomic, copy) NSString *errorText;
-
-// allows you to mask the input with bullet characters
-// defaults to YES
+@property (nonatomic, copy) NSString *PINText;
 @property (nonatomic, assign) BOOL secureTextEntry;
-// delegate
 @property (nonatomic, assign) id<GCPINViewControllerDelegate> delegate;
+@property (nonatomic, retain) id userInfo;
 
-// this creates a navigation controller to encapsulate the pin view and presents it as a modal view
 - (void)presentViewFromViewController:(UIViewController *)controller animated:(BOOL)animated;
 
 @end

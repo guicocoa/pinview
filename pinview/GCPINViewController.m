@@ -9,42 +9,43 @@
 #import "GCPINViewController.h"
 
 @interface GCPINViewController (private)
-- (void)setPINText:(NSString *)string;
+- (void)updatePINLabels:(NSString *)string;
 @end
 
 @implementation GCPINViewController (private)
-- (void)setPINText:(NSString *)string {
+- (void)updatePINLabels:(NSString *)string {
 	for (NSInteger i = 0; i < [string length]; i++) {
-		UITextField *currentField = [pinFields objectAtIndex:i];
+		UILabel *label = [pinFields objectAtIndex:i];
 		if (self.secureTextEntry) {
-			[currentField setText:@"●"];
+			[label setText:@"●"];
 		}
 		else {
 			NSRange subrange = NSMakeRange(i, 1);
 			NSString *substring = [string substringWithRange:subrange];
-			[currentField setText:substring];
+			[label setText:substring];
 		}
 	}
 	for (NSInteger i = [string length]; i < 4; i++) {
-		UITextField *currentField = [pinFields objectAtIndex:i];
-		[currentField setText:@""];
+		UILabel *label = [pinFields objectAtIndex:i];
+		[label setText:@""];
 	}
 }
 @end
 
 @implementation GCPINViewController
 
-@synthesize messageText, errorText;
+@synthesize messageText, errorText, PINText;
 @synthesize secureTextEntry;
-@synthesize delegate;
+@synthesize delegate, userInfo;
 
 #pragma mark -
 #pragma mark initialize
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		self.messageText = nil;
-		self.errorText = nil;
-		self.title = nil;
+		self.messageText = @"";
+		self.errorText = @"";
+		self.PINText = @"";
+		self.title = @"";
 		self.delegate = nil;
 		self.secureTextEntry = YES;
 	}
@@ -65,6 +66,7 @@
 	
 	self.errorText = nil;
 	self.messageText = nil;
+	self.PINText = nil;
 	
     [super dealloc];
 }
@@ -78,7 +80,7 @@
 				 fieldOneLabel, fieldTwoLabel,
 				 fieldThreeLabel, fieldFourLabel, nil];
 	
-	[self setPINText:@""];
+	[self setPINText:PINText];
 	
 	[inputField setDelegate:self];
 	[inputField setKeyboardType:UIKeyboardTypeNumberPad];
@@ -106,22 +108,32 @@
 #pragma mark -
 #pragma mark UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-	if ([string length] && [[textField text] length] == 4) {
+	if ([PINText length] == 4) {
 		return NO;
 	}
 	
-	[errorLabel setHidden:YES];
-	NSString *futureText = [[textField text] stringByReplacingCharactersInRange:range withString:string];
-	[self setPINText:futureText];
-	
-	if ([futureText length] == 4 && delegate != nil) {
-		BOOL valid = [delegate isPINCodeValid:futureText];
-		[errorLabel setHidden:valid];
-		if (valid) {
-			[self dismissModalViewControllerAnimated:YES];
+	if ([string length]) {
+		NSString *temp = [NSString stringWithFormat:@"%@%@", PINText, string];
+		[PINText release];
+		PINText = [temp copy];
+	}
+	else {
+		if ([PINText length] == 0) {
+			return YES;
 		}
-		else {
-			[self setPINText:@""];
+		
+		NSString *temp = [PINText substringWithRange:
+						  NSMakeRange(0, [PINText length] - 1)];
+		[PINText release];
+		PINText = [temp copy];
+	}
+	
+	[self updatePINLabels:PINText];
+	[errorLabel setHidden:YES];
+
+	if ([PINText length] == 4) {
+		if (![delegate pinView:self validateCode:PINText]) {
+			[errorLabel setHidden:NO];
 		}
 	}
 	
@@ -143,6 +155,19 @@
 	}
 	[errorText release];
 	errorText = [text copy];
+}
+
+#pragma mark -
+#pragma mark set pin text
+- (void)setPINText:(NSString *)string {
+	if ([string length] > 4) {
+		return;
+	}
+	
+	[PINText release];
+	PINText = [string copy];
+	[inputField setText:PINText];
+	[self updatePINLabels:PINText];
 }
 
 @end
