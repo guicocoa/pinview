@@ -16,6 +16,7 @@
 		3B90F8111229A3090013322F /* PINViewDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B90F8101229A3090013322F /* PINViewDefault.xib */; };
 		3B90F8141229A4150013322F /* PINBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B90F8131229A4150013322F /* PINBox@2x.png */; };
 		3B90F8161229B3420013322F /* PINBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B90F8151229B3420013322F /* PINBox.png */; };
+		D65EEC4B12561CC5006D1D6D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65EEC4A12561CC5006D1D6D /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3B90F8131229A4150013322F /* PINBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PINBox@2x.png"; path = "pinview/PINBox@2x.png"; sourceTree = "<group>"; };
 		3B90F8151229B3420013322F /* PINBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PINBox.png; path = pinview/PINBox.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PINCode-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PINCode-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		D65EEC4A12561CC5006D1D6D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				D65EEC4B12561CC5006D1D6D /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +105,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				D65EEC4A12561CC5006D1D6D /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
