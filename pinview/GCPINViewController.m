@@ -7,6 +7,7 @@
 //
 
 #import "GCPINViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface GCPINViewController (private)
 - (void)updatePINLabels:(NSString *)string;
@@ -137,6 +138,7 @@
 
 	if ([PINText length] == 4) {
 		if (![delegate pinView:self validateCode:PINText]) {
+      AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
       [self setPINText:@""];
       [UIView beginAnimations:nil context:nil];
       [errorLabel setAlpha:1.0];
