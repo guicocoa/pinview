@@ -14,6 +14,10 @@
 
 @implementation GCPINViewController (private)
 - (void)updatePINLabels:(NSString *)string {
+  [UIView beginAnimations:nil context:nil];
+	[errorLabel setAlpha:0.0];
+  [UIView commitAnimations];
+
 	for (NSInteger i = 0; i < [string length]; i++) {
 		UILabel *label = [pinFields objectAtIndex:i];
 		if (self.secureTextEntry) {
@@ -89,7 +93,8 @@
 	
 	[messageLabel setText:messageText];
 	[errorLabel setText:errorText];
-	[errorLabel setHidden:YES];
+	[errorLabel setHidden:NO];
+  [errorLabel setAlpha:0.0];
 }
 
 #pragma mark -
@@ -129,11 +134,13 @@
 	}
 	
 	[self updatePINLabels:PINText];
-	[errorLabel setHidden:YES];
 
 	if ([PINText length] == 4) {
 		if (![delegate pinView:self validateCode:PINText]) {
-			[errorLabel setHidden:NO];
+      [self setPINText:@""];
+      [UIView beginAnimations:nil context:nil];
+      [errorLabel setAlpha:1.0];
+      [UIView commitAnimations];
 		}
 	}
 	
