@@ -39,7 +39,6 @@
 
 @property (nonatomic, copy) NSString *messageText;
 @property (nonatomic, copy) NSString *errorText;
-@property (nonatomic, copy) NSString *PINText;
 @property (nonatomic, assign) BOOL secureTextEntry;
 @property (nonatomic, assign) id<GCPINViewControllerDelegate> delegate;
 @property (nonatomic, retain) id userInfo;

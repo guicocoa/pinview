@@ -9,23 +9,23 @@
 #import "GCPINViewController.h"
 
 @interface GCPINViewController (private)
-- (void)updatePINLabels:(NSString *)string;
+- (void)updatePINDisplay;
 @end
 
 @implementation GCPINViewController (private)
-- (void)updatePINLabels:(NSString *)string {
-	for (NSInteger i = 0; i < [string length]; i++) {
+- (void)updatePINDisplay {
+	for (NSInteger i = 0; i < [PINText length]; i++) {
 		UILabel *label = [pinFields objectAtIndex:i];
 		if (self.secureTextEntry) {
 			[label setText:@"●"];
 		}
 		else {
 			NSRange subrange = NSMakeRange(i, 1);
-			NSString *substring = [string substringWithRange:subrange];
+			NSString *substring = [PINText substringWithRange:subrange];
 			[label setText:substring];
 		}
 	}
-	for (NSInteger i = [string length]; i < 4; i++) {
+	for (NSInteger i = [PINText length]; i < 4; i++) {
 		UILabel *label = [pinFields objectAtIndex:i];
 		[label setText:@""];
 	}
@@ -34,7 +34,7 @@
 
 @implementation GCPINViewController
 
-@synthesize messageText, errorText, PINText;
+@synthesize messageText, errorText;
 @synthesize secureTextEntry;
 @synthesize delegate, userInfo;
 
@@ -44,7 +44,7 @@
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 		self.messageText = @"";
 		self.errorText = @"";
-		self.PINText = @"";
+		PINText = [@"" retain];
 		self.title = @"";
 		self.delegate = nil;
 		self.secureTextEntry = YES;
@@ -53,20 +53,38 @@
 }
 
 #pragma mark -
-#pragma mark view lifecycle
+#pragma mark memory management
 - (void)viewDidUnload {
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:UITextFieldTextDidChangeNotification
+												  object:inputField];
+	
 	[super viewDidUnload];
 	
 	[pinFields release];
 	pinFields = nil;
+	
+	fieldOneLabel = nil;
+	fieldTwoLabel = nil;
+	fieldThreeLabel = nil;
+	fieldFourLabel = nil;
+	messageLabel = nil;
+	errorLabel = nil;
+	inputField = nil;
 }
 - (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:UITextFieldTextDidChangeNotification
+												  object:inputField];
+	
 	[pinFields release];
 	pinFields = nil;
 	
+	[PINText release];
+	PINText = nil;
+	
 	self.errorText = nil;
 	self.messageText = nil;
-	self.PINText = nil;
 	
     [super dealloc];
 }
@@ -76,17 +94,27 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	pinFields = [[NSArray alloc] initWithObjects:
-				 fieldOneLabel, fieldTwoLabel,
-				 fieldThreeLabel, fieldFourLabel, nil];
-	
-	[self setPINText:PINText];
-	
+	// text notifs
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(textDidChange:)
+												 name:UITextFieldTextDidChangeNotification
+											   object:inputField];
+	 
+	// setup input field
 	[inputField setDelegate:self];
 	[inputField setKeyboardType:UIKeyboardTypeNumberPad];
 	[inputField setHidden:YES];
 	[inputField becomeFirstResponder];
 	
+	// setup pinfields list
+	pinFields = [[NSArray alloc] initWithObjects:
+				 fieldOneLabel, fieldTwoLabel,
+				 fieldThreeLabel, fieldFourLabel, nil];
+	
+	// set initial pin text
+	[self updatePINDisplay];
+	
+	// set default label states
 	[messageLabel setText:messageText];
 	[errorLabel setText:errorText];
 	[errorLabel setHidden:YES];
@@ -99,79 +127,59 @@
 #pragma mark -
 #pragma mark show view controller
 - (void)presentViewFromViewController:(UIViewController *)controller animated:(BOOL)animated {
-	if (self.delegate == nil) {
-		[[NSException exceptionWithName:NSInternalInconsistencyException
-								 reason:@"You failed to provide a delegate before attempting to show the PIN code view"
-							   userInfo:nil] raise];
-	}
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self];
 	[controller presentModalViewController:navController animated:animated];
 	[navController release];
 }
 
 #pragma mark -
-#pragma mark UITextFieldDelegate
+#pragma mark text methods
+- (void)textDidChange:(NSNotification *)notif {
+	UITextField *field = [notif object];
+	if (field == inputField) {
+		NSString *newText = field.text;
+		
+		if ([newText length] == 4) {
+			NSString *toValidate = [field.text copy];
+			BOOL valid = [delegate pinView:self validateCode:toValidate];
+			[toValidate release];
+			if (!valid) {
+				errorLabel.hidden = NO;
+				inputField.text = @"";
+			}
+		}
+		else {
+			[PINText release];
+			PINText = [newText copy];
+		}
+
+		[self updatePINDisplay];
+	}
+}
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-	if ([PINText length] == 4) {
+	if ([PINText length] == 4 && [string length] > 0) {
 		return NO;
 	}
-	
-	if ([string length]) {
-		NSString *temp = [NSString stringWithFormat:@"%@%@", PINText, string];
-		[PINText release];
-		PINText = [temp copy];
-	}
 	else {
-		if ([PINText length] == 0) {
-			return YES;
-		}
-		
-		NSString *temp = [PINText substringWithRange:
-						  NSMakeRange(0, [PINText length] - 1)];
-		[PINText release];
-		PINText = [temp copy];
+		return YES;
 	}
-	
-	[self updatePINLabels:PINText];
-	[errorLabel setHidden:YES];
-
-	if ([PINText length] == 4) {
-		if (![delegate pinView:self validateCode:PINText]) {
-			[errorLabel setHidden:NO];
-		}
-	}
-	
-	return YES;
 }
 
 #pragma mark -
 #pragma mark cutsom accessors
 - (void)setMessageText:(NSString *)text {
-	if (messageLabel != nil) {
-		messageLabel.text = text;
-	}
 	[messageText release];
 	messageText = [text copy];
+	if (messageLabel != nil) {
+		messageLabel.text = messageText;
+	}
 }
 - (void)setErrorText:(NSString *)text {
-	if (errorLabel != nil) {
-		errorLabel.text = text;
-	}
 	[errorText release];
 	errorText = [text copy];
-}
-
-#pragma mark -
-#pragma mark set pin text
-- (void)setPINText:(NSString *)string {
-	if ([string length] > 4) {
-		return;
+	if (errorLabel != nil) {
+		errorLabel.text = errorText;
 	}
-	
-	[PINText release];
-	PINText = [string copy];
-	[inputField setText:PINText];
-	[self updatePINLabels:PINText];
 }
 
 @end
