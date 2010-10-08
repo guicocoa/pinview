@@ -34,7 +34,11 @@
 #pragma mark -
 #pragma mark GCPINViewControllerDelegate
 - (BOOL)pinView:(GCPINViewController *)pinView validateCode:(NSString *)code {
-	return [code isEqualToString:@"1234"];
+	BOOL correct = [code isEqualToString:@"1234"];
+	if (correct) {
+		[pinView dismissModalViewControllerAnimated:YES];
+	}
+	return correct;
 }
 
 #pragma mark -
