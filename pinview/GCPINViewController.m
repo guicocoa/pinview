@@ -9,15 +9,28 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 #import "GCPINViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface GCPINViewController (private)
+- (void)setErrorLabelHidden:(BOOL)hidden animated:(BOOL)animated;
 - (void)updatePINDisplay;
 @end
 
 @implementation GCPINViewController (private)
+- (void)setErrorLabelHidden:(BOOL)hidden animated:(BOOL)animated {
+	if (animated) {
+		[UIView beginAnimations:nil context:nil];
+	}
+	
+	errorLabel.alpha = (hidden) ? 0.0 : 1.0;
+	
+	if (animated) {
+		[UIView commitAnimations];
+	}
+}
 - (void)updatePINDisplay {
 	for (NSInteger i = 0; i < [PINText length]; i++) {
-		UILabel *label = [pinFields objectAtIndex:i];
+	  UILabel *label = [pinFields objectAtIndex:i];
 		if (self.secureTextEntry) {
 			[label setText:@"●"];
 		}
@@ -119,7 +132,7 @@
 	// set default label states
 	[messageLabel setText:messageText];
 	[errorLabel setText:errorText];
-	[errorLabel setHidden:YES];
+	[self setErrorLabelHidden:YES animated:NO];
 }
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
@@ -147,7 +160,7 @@
 			[toValidate release];
 			if (!valid) {
 				AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-				errorLabel.hidden = NO;
+				[self setErrorLabelHidden:NO animated:YES];
 				inputField.text = @"";
 			}
 		}
@@ -155,7 +168,7 @@
 			[PINText release];
 			PINText = [newText copy];
 		}
-
+		
 		[self updatePINDisplay];
 	}
 }
@@ -164,6 +177,7 @@
 		return NO;
 	}
 	else {
+		[self setErrorLabelHidden:YES animated:YES];
 		return YES;
 	}
 }

@@ -14,20 +14,31 @@
 
 #pragma mark -
 #pragma mark Application lifecycle
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
+	// setup main view controller   
 	UIViewController *defaultView = [[UIViewController alloc] init];
-	GCPINViewController *pinView = [[GCPINViewController alloc] initWithNibName:@"PINViewDefault" bundle:nil];
-	[pinView setDelegate:self];
-	[pinView setMessageText:@"Enter Your PIN"];
-	[pinView setTitle:@"PIN Code"];
-	[pinView setErrorText:@"Awww You Suck"];
+	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(10, 200, 300, 50)] autorelease];
+	label.backgroundColor = [UIColor blackColor];
+	label.textColor = [UIColor orangeColor];
+	label.text = @"Success!";
+	[defaultView.view addSubview:label];
 	
+	// setup pin view
+	GCPINViewController *pinView = [[GCPINViewController alloc] initWithNibName:@"PINViewDefault" bundle:nil];
+	pinView.delegate = self;
+	pinView.messageText = @"Enter Your PIN";
+	pinView.title = @"PIN Code";
+	pinView.errorText = @"Invalid";
+	
+	// setup window
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	[window setRootViewController:defaultView];
-    [window makeKeyAndVisible];
+	[window makeKeyAndVisible];
 	
+	// show pin view
 	[pinView presentViewFromViewController:defaultView animated:NO];
 	
+	// return
 	return YES;
 }
 

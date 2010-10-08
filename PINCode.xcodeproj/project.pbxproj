@@ -12,7 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		3B7D74B1125FC0B700376B2C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D74B0125FC0B700376B2C /* AudioToolbox.framework */; };
+		3B7D74C1125FC41B00376B2C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D74C0125FC41B00376B2C /* AudioToolbox.framework */; };
 		3B90F7BE122961790013322F /* GCPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B90F7BD122961790013322F /* GCPINViewController.m */; };
 		3B90F8111229A3090013322F /* PINViewDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B90F8101229A3090013322F /* PINViewDefault.xib */; };
 		3B90F8141229A4150013322F /* PINBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B90F8131229A4150013322F /* PINBox@2x.png */; };
@@ -28,7 +28,7 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PINCode_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINCode_Prefix.pch; sourceTree = "<group>"; };
-		3B7D74B0125FC0B700376B2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3B7D74C0125FC41B00376B2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3B90F7BC122961790013322F /* GCPINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCPINViewController.h; path = pinview/GCPINViewController.h; sourceTree = "<group>"; };
 		3B90F7BD122961790013322F /* GCPINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCPINViewController.m; path = pinview/GCPINViewController.m; sourceTree = "<group>"; };
 		3B90F8101229A3090013322F /* PINViewDefault.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PINViewDefault.xib; path = pinview/PINViewDefault.xib; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
-				3B7D74B1125FC0B700376B2C /* AudioToolbox.framework in Frameworks */,
+				3B7D74C1125FC41B00376B2C /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,10 +102,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B7D74C0125FC41B00376B2C /* AudioToolbox.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
-				3B7D74B0125FC0B700376B2C /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
