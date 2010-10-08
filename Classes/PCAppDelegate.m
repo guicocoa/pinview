@@ -18,8 +18,8 @@
 	UIViewController *defaultView = [[UIViewController alloc] init];
 	GCPINViewController *pinView = [[GCPINViewController alloc] initWithNibName:@"PINViewDefault" bundle:nil];
 	[pinView setDelegate:self];
-	[pinView setPromptText:@"Enter Your PIN"];
-	[pinView setTitleText:@"PIN Code"];
+	[pinView setMessageText:@"Enter Your PIN"];
+	[pinView setTitle:@"PIN Code"];
 	[pinView setErrorText:@"Awww You Suck"];
 	
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -33,8 +33,8 @@
 
 #pragma mark -
 #pragma mark GCPINViewControllerDelegate
-- (BOOL)isPINCodeValid:(NSString *)PIN {
-	return [PIN isEqualToString:@"1234"];
+- (BOOL)pinView:(GCPINViewController *)pinView validateCode:(NSString *)code {
+	return [code isEqualToString:@"1234"];
 }
 
 #pragma mark -

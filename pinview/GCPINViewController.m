@@ -1,4 +1,4 @@
-    //
+//
 //  GCPINViewController.m
 //  PINCode
 //
@@ -90,6 +90,10 @@
 	[messageLabel setText:messageText];
 	[errorLabel setText:errorText];
 	[errorLabel setHidden:YES];
+}
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 #pragma mark -
