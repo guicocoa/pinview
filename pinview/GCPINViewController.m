@@ -6,6 +6,8 @@
 //  Copyright 2010 GUI Cocoa, LLC. All rights reserved.
 //
 
+#import <AudioToolbox/AudioToolbox.h>
+
 #import "GCPINViewController.h"
 
 @interface GCPINViewController (private)
@@ -144,6 +146,7 @@
 			BOOL valid = [delegate pinView:self validateCode:toValidate];
 			[toValidate release];
 			if (!valid) {
+				AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 				errorLabel.hidden = NO;
 				inputField.text = @"";
 			}
