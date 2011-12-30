@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BE5E65614AD45EE00D8D292 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE5E65514AD45EE00D8D292 /* UIKit.framework */; };
+		3BE5E65814AD45EE00D8D292 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE5E65714AD45EE00D8D292 /* Foundation.framework */; };
+		3BE5E65A14AD45EE00D8D292 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE5E65914AD45EE00D8D292 /* CoreGraphics.framework */; };
+		3BE5E66014AD45EE00D8D292 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E65E14AD45EE00D8D292 /* InfoPlist.strings */; };
+		3BE5E66214AD45EE00D8D292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5E66114AD45EE00D8D292 /* main.m */; };
+		3BE5E66614AD45EE00D8D292 /* SAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5E66514AD45EE00D8D292 /* SAAppDelegate.m */; };
+		3BE5E66914AD45EE00D8D292 /* SAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5E66814AD45EE00D8D292 /* SAViewController.m */; };
+		3BE5E66C14AD45EE00D8D292 /* SAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E66A14AD45EE00D8D292 /* SAViewController.xib */; };
+		3BE5E67C14AD482D00D8D292 /* GCPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5E67814AD482D00D8D292 /* GCPINViewController.m */; };
+		3BE5E67D14AD482D00D8D292 /* PINBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E67914AD482D00D8D292 /* PINBox.png */; };
+		3BE5E67E14AD482D00D8D292 /* PINBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E67A14AD482D00D8D292 /* PINBox@2x.png */; };
+		3BE5E67F14AD482D00D8D292 /* PINViewDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E67B14AD482D00D8D292 /* PINViewDefault.xib */; };
+		3BE5E68214AD547500D8D292 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE5E68114AD547500D8D292 /* AudioToolbox.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3BE5E65114AD45EE00D8D292 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BE5E65514AD45EE00D8D292 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3BE5E65714AD45EE00D8D292 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3BE5E65914AD45EE00D8D292 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3BE5E65D14AD45EE00D8D292 /* SampleApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SampleApp-Info.plist"; sourceTree = "<group>"; };
+		3BE5E65F14AD45EE00D8D292 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3BE5E66114AD45EE00D8D292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3BE5E66314AD45EE00D8D292 /* SampleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Prefix.pch"; sourceTree = "<group>"; };
+		3BE5E66414AD45EE00D8D292 /* SAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAAppDelegate.h; sourceTree = "<group>"; };
+		3BE5E66514AD45EE00D8D292 /* SAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAAppDelegate.m; sourceTree = "<group>"; };
+		3BE5E66714AD45EE00D8D292 /* SAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAViewController.h; sourceTree = "<group>"; };
+		3BE5E66814AD45EE00D8D292 /* SAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAViewController.m; sourceTree = "<group>"; };
+		3BE5E66B14AD45EE00D8D292 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SAViewController.xib; sourceTree = "<group>"; };
+		3BE5E67714AD482D00D8D292 /* GCPINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPINViewController.h; sourceTree = "<group>"; };
+		3BE5E67814AD482D00D8D292 /* GCPINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPINViewController.m; sourceTree = "<group>"; };
+		3BE5E67914AD482D00D8D292 /* PINBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PINBox.png; sourceTree = "<group>"; };
+		3BE5E67A14AD482D00D8D292 /* PINBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PINBox@2x.png"; sourceTree = "<group>"; };
+		3BE5E67B14AD482D00D8D292 /* PINViewDefault.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PINViewDefault.xib; sourceTree = "<group>"; };
+		3BE5E68114AD547500D8D292 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BE5E64E14AD45EE00D8D292 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE5E68214AD547500D8D292 /* AudioToolbox.framework in Frameworks */,
+				3BE5E65614AD45EE00D8D292 /* UIKit.framework in Frameworks */,
+				3BE5E65814AD45EE00D8D292 /* Foundation.framework in Frameworks */,
+				3BE5E65A14AD45EE00D8D292 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BE5E64614AD45EE00D8D292 = {
+			isa = PBXGroup;
+			children = (
+				3BE5E67614AD482D00D8D292 /* pinview */,
+				3BE5E65B14AD45EE00D8D292 /* SampleApp */,
+				3BE5E65414AD45EE00D8D292 /* Frameworks */,
+				3BE5E65214AD45EE00D8D292 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BE5E65214AD45EE00D8D292 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5E65114AD45EE00D8D292 /* SampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BE5E65414AD45EE00D8D292 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5E68114AD547500D8D292 /* AudioToolbox.framework */,
+				3BE5E65514AD45EE00D8D292 /* UIKit.framework */,
+				3BE5E65714AD45EE00D8D292 /* Foundation.framework */,
+				3BE5E65914AD45EE00D8D292 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BE5E65B14AD45EE00D8D292 /* SampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5E66414AD45EE00D8D292 /* SAAppDelegate.h */,
+				3BE5E66514AD45EE00D8D292 /* SAAppDelegate.m */,
+				3BE5E66714AD45EE00D8D292 /* SAViewController.h */,
+				3BE5E66814AD45EE00D8D292 /* SAViewController.m */,
+				3BE5E66A14AD45EE00D8D292 /* SAViewController.xib */,
+				3BE5E65C14AD45EE00D8D292 /* Supporting Files */,
+			);
+			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		3BE5E65C14AD45EE00D8D292 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5E65D14AD45EE00D8D292 /* SampleApp-Info.plist */,
+				3BE5E65E14AD45EE00D8D292 /* InfoPlist.strings */,
+				3BE5E66114AD45EE00D8D292 /* main.m */,
+				3BE5E66314AD45EE00D8D292 /* SampleApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BE5E67614AD482D00D8D292 /* pinview */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5E67714AD482D00D8D292 /* GCPINViewController.h */,
+				3BE5E67814AD482D00D8D292 /* GCPINViewController.m */,
+				3BE5E67914AD482D00D8D292 /* PINBox.png */,
+				3BE5E67A14AD482D00D8D292 /* PINBox@2x.png */,
+				3BE5E67B14AD482D00D8D292 /* PINViewDefault.xib */,
+			);
+			path = pinview;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BE5E65014AD45EE00D8D292 /* SampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BE5E66F14AD45EE00D8D292 /* Build configuration list for PBXNativeTarget "SampleApp" */;
+			buildPhases = (
+				3BE5E64D14AD45EE00D8D292 /* Sources */,
+				3BE5E64E14AD45EE00D8D292 /* Frameworks */,
+				3BE5E64F14AD45EE00D8D292 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleApp;
+			productName = SampleApp;
+			productReference = 3BE5E65114AD45EE00D8D292 /* SampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BE5E64814AD45EE00D8D292 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "GUI Cocoa, LLC.";
+			};
+			buildConfigurationList = 3BE5E64B14AD45EE00D8D292 /* Build configuration list for PBXProject "SampleApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BE5E64614AD45EE00D8D292;
+			productRefGroup = 3BE5E65214AD45EE00D8D292 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BE5E65014AD45EE00D8D292 /* SampleApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BE5E64F14AD45EE00D8D292 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE5E66014AD45EE00D8D292 /* InfoPlist.strings in Resources */,
+				3BE5E66C14AD45EE00D8D292 /* SAViewController.xib in Resources */,
+				3BE5E67D14AD482D00D8D292 /* PINBox.png in Resources */,
+				3BE5E67E14AD482D00D8D292 /* PINBox@2x.png in Resources */,
+				3BE5E67F14AD482D00D8D292 /* PINViewDefault.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BE5E64D14AD45EE00D8D292 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE5E66214AD45EE00D8D292 /* main.m in Sources */,
+				3BE5E66614AD45EE00D8D292 /* SAAppDelegate.m in Sources */,
+				3BE5E66914AD45EE00D8D292 /* SAViewController.m in Sources */,
+				3BE5E67C14AD482D00D8D292 /* GCPINViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3BE5E65E14AD45EE00D8D292 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BE5E65F14AD45EE00D8D292 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3BE5E66A14AD45EE00D8D292 /* SAViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BE5E66B14AD45EE00D8D292 /* en */,
+			);
+			name = SAViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BE5E66D14AD45EE00D8D292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3BE5E66E14AD45EE00D8D292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BE5E67014AD45EE00D8D292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
+				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3BE5E67114AD45EE00D8D292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
+				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BE5E64B14AD45EE00D8D292 /* Build configuration list for PBXProject "SampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE5E66D14AD45EE00D8D292 /* Debug */,
+				3BE5E66E14AD45EE00D8D292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BE5E66F14AD45EE00D8D292 /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE5E67014AD45EE00D8D292 /* Debug */,
+				3BE5E67114AD45EE00D8D292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BE5E64814AD45EE00D8D292 /* Project object */;
+}
