@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GCPINViewController.h"
-
-@interface SAViewController : UIViewController <GCPINViewControllerDelegate>
+@interface SAViewController : UIViewController
 
 - (IBAction)setPIN;
 - (IBAction)checkPIN;
