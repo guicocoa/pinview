@@ -8,7 +8,7 @@ This project gives you a passcode control that can be dropped into any iOS app. 
 
 - Native iOS look and feel
 - Masks pin entry with bullet characters
-- Provide your own theme by using a custom NIB file
+- Provide your own theme by using a custom nib file
 - Provide custom text to be displayed on the passcode entry view
 - Block-based passcode verification
 
