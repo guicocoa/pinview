@@ -8,14 +8,44 @@
 
 #import "SAViewController.h"
 
-#import "GCPINViewController.h"
-
 @implementation SAViewController
 
 - (IBAction)setPIN {
-    GCPINViewController *PIN = [[GCPINViewController alloc] initWithNibName:@"PINViewDefault" bundle:nil];
-    [PIN presentViewFromViewController:self animated:YES];
+    GCPINViewController *PIN = [[GCPINViewController alloc]
+                                initWithNibName:@"PINViewDefault"
+                                bundle:nil
+                                mode:GCPINViewControllerModeCreate];
+    PIN.delegate = self;
+    PIN.messageText = @"Create Passcode";
+    PIN.errorText = @"The passcodes do not match";
+    [PIN presentPasscodeViewFromViewController:self];
     [PIN release];
+}
+
+- (IBAction)checkPIN {
+    GCPINViewController *PIN = [[GCPINViewController alloc]
+                                initWithNibName:@"PINViewDefault"
+                                bundle:nil
+                                mode:GCPINViewControllerModeVerify];
+    PIN.delegate = self;
+    PIN.messageText = @"Check Passcode";
+    PIN.errorText = @"Incorrect passcode";
+    [PIN presentPasscodeViewFromViewController:self];
+    [PIN release];
+}
+
+- (BOOL)pinView:(GCPINViewController *)pinView validateCode:(NSString *)code {
+    if (pinView.mode == GCPINViewControllerModeCreate) {
+        NSLog(@"setting code: %@", code);
+        return YES;
+    }
+    else if (pinView.mode == GCPINViewControllerModeVerify) {
+        NSLog(@"checking code: %@", code);
+        return [code isEqualToString:@"0187"];
+    }
+    else {
+        return NO;
+    }
 }
 
 @end

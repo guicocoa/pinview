@@ -14,6 +14,11 @@
 - (BOOL)pinView:(GCPINViewController *)pinView validateCode:(NSString *)code;
 @end
 
+typedef enum {
+    GCPINViewControllerModeCreate = 0,
+    GCPINViewControllerModeVerify
+} GCPINViewControllerMode;
+
 @interface GCPINViewController : UIViewController <UITextFieldDelegate>
 
 // nib properties
@@ -30,7 +35,11 @@
 @property (nonatomic, copy) NSString *errorText;
 @property (nonatomic, assign) id<GCPINViewControllerDelegate> delegate;
 @property (nonatomic, retain) id userInfo;
+@property (nonatomic, readonly, assign) GCPINViewControllerMode mode;
 
-- (void)presentViewFromViewController:(UIViewController *)controller animated:(BOOL)animated;
+// object methods
+- (id)initWithNibName:(NSString *)nib bundle:(NSBundle *)bundle mode:(GCPINViewControllerMode)mode;
+- (void)presentPasscodeViewFromViewController:(UIViewController *)controller;
+- (void)dismissPasscodeView;
 
 @end
