@@ -17,8 +17,9 @@
                                 initWithNibName:@"PINViewDefault"
                                 bundle:nil
                                 mode:GCPINViewControllerModeCreate];
-    PIN.messageText = @"Create Passcode";
+    PIN.messageText = @"Enter a passcode";
     PIN.errorText = @"The passcodes do not match";
+    PIN.title = @"Set Passcode";
     PIN.verifyBlock = ^(NSString *code) {
         NSLog(@"setting code: %@", code);
         return YES;
@@ -32,8 +33,9 @@
                                 initWithNibName:@"PINViewDefault"
                                 bundle:nil
                                 mode:GCPINViewControllerModeVerify];
-    PIN.messageText = @"Check Passcode";
+    PIN.messageText = @"Enter your passcode";
     PIN.errorText = @"Incorrect passcode";
+    PIN.title = @"Enter Passcode";
     PIN.verifyBlock = ^(NSString *code) {
         NSLog(@"checking code: %@", code);
         return [code isEqualToString:@"0187"];
