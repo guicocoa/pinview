@@ -16,6 +16,7 @@
 - (void)updatePINDisplay;
 - (void)reset;
 - (void)wrong;
+- (void)dismiss;
 @end
 
 @implementation GCPINViewController
@@ -32,11 +33,13 @@
 @synthesize labels = __labels;
 @synthesize mode = __mode;
 @synthesize text = __text;
-
-@synthesize delegate, userInfo;
+@synthesize verifyBlock = __verifyBlock;
 
 #pragma mark - object methods
 - (id)initWithNibName:(NSString *)nib bundle:(NSBundle *)bundle mode:(GCPINViewControllerMode)mode {
+    NSAssert(mode == GCPINViewControllerModeCreate ||
+             mode == GCPINViewControllerModeVerify,
+             @"Invalid passcode mode");
 	if (self = [super initWithNibName:nib bundle:bundle]) {
         [[NSNotificationCenter defaultCenter]
          addObserver:self
@@ -67,14 +70,15 @@
     self.errorText = nil;
     self.labels = nil;
     self.text = nil;
+    self.verifyBlock = nil;
 	
     // super
     [super dealloc];
     
 }
-- (void)presentPasscodeViewFromViewController:(UIViewController *)controller {
+- (void)presentFromViewController:(UIViewController *)controller animated:(BOOL)animated {
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self];
-	[controller presentModalViewController:navController animated:YES];
+	[controller presentModalViewController:navController animated:animated];
 	[navController release];
 }
 - (void)updatePINDisplay {
@@ -98,7 +102,7 @@
     self.errorLabel.hidden = NO;
     [self reset];
 }
-- (void)dismissPasscodeView {
+- (void)dismiss {
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     double delay = 0.3;
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
@@ -161,7 +165,7 @@
 #pragma mark - text field methods
 - (void)textDidChange:(NSNotification *)notif {
     if ([notif object] == self.inputField) {
-        NSAssert(self.delegate, @"No passcode delegate is set");
+        NSAssert(self.verifyBlock, @"No passcode verify block is set");
         [self updatePINDisplay];
         if ([self.inputField.text length] == 4) {
             if (self.mode == GCPINViewControllerModeCreate) {
@@ -171,8 +175,8 @@
                 }
                 else {
                     if ([self.text isEqualToString:self.inputField.text] &&
-                        [self.delegate pinView:self validateCode:self.text]) {
-                        [self dismissPasscodeView];
+                        self.verifyBlock(self.inputField.text)) {
+                        [self dismiss];
                     }
                     else {
                         [self wrong];
@@ -181,8 +185,8 @@
                 }
             }
             else {
-                if ([delegate pinView:self validateCode:self.inputField.text]) {
-                    [self dismissPasscodeView];
+                if (self.verifyBlock(self.inputField.text)) {
+                    [self dismiss];
                 }
                 else {
                     [self wrong];
