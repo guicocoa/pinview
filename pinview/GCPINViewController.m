@@ -64,6 +64,7 @@
          name:UITextFieldTextDidChangeNotification
          object:nil];
         self.mode = mode;
+        __dismiss = NO;
 	}
 	return self;
 }
@@ -121,6 +122,7 @@
 }
 - (void)dismiss {
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    __dismiss = YES;
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, kGCPINViewControllerDelay * NSEC_PER_SEC);
     dispatch_after(time, dispatch_get_main_queue(), ^(void){
         [self dismissModalViewControllerAnimated:YES];
@@ -218,6 +220,9 @@
         self.errorLabel.hidden = YES;
         return YES;
     }
+}
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    return __dismiss;
 }
 
 @end

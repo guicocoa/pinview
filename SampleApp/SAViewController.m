@@ -44,4 +44,13 @@
     [PIN release];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        return YES;
+    }
+    else {
+        return (orientation == UIInterfaceOrientationPortrait);
+    }
+}
+
 @end

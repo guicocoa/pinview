@@ -18,7 +18,7 @@
 		3BE5E67C14AD482D00D8D292 /* GCPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5E67814AD482D00D8D292 /* GCPINViewController.m */; };
 		3BE5E67D14AD482D00D8D292 /* PINBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E67914AD482D00D8D292 /* PINBox.png */; };
 		3BE5E67E14AD482D00D8D292 /* PINBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E67A14AD482D00D8D292 /* PINBox@2x.png */; };
-		3BE5E67F14AD482D00D8D292 /* PINViewDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E67B14AD482D00D8D292 /* PINViewDefault.xib */; };
+		3BE5E67F14AD482D00D8D292 /* GCPINViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5E67B14AD482D00D8D292 /* GCPINViewController~iphone.xib */; };
 		3BE5E68214AD547500D8D292 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE5E68114AD547500D8D292 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		3BE5E67814AD482D00D8D292 /* GCPINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPINViewController.m; sourceTree = "<group>"; };
 		3BE5E67914AD482D00D8D292 /* PINBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PINBox.png; sourceTree = "<group>"; };
 		3BE5E67A14AD482D00D8D292 /* PINBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PINBox@2x.png"; sourceTree = "<group>"; };
-		3BE5E67B14AD482D00D8D292 /* PINViewDefault.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PINViewDefault.xib; sourceTree = "<group>"; };
+		3BE5E67B14AD482D00D8D292 /* GCPINViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GCPINViewController~iphone.xib"; sourceTree = "<group>"; };
 		3BE5E68114AD547500D8D292 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -119,7 +119,7 @@
 				3BE5E67814AD482D00D8D292 /* GCPINViewController.m */,
 				3BE5E67914AD482D00D8D292 /* PINBox.png */,
 				3BE5E67A14AD482D00D8D292 /* PINBox@2x.png */,
-				3BE5E67B14AD482D00D8D292 /* PINViewDefault.xib */,
+				3BE5E67B14AD482D00D8D292 /* GCPINViewController~iphone.xib */,
 			);
 			path = pinview;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				3BE5E66C14AD45EE00D8D292 /* SAViewController.xib in Resources */,
 				3BE5E67D14AD482D00D8D292 /* PINBox.png in Resources */,
 				3BE5E67E14AD482D00D8D292 /* PINBox@2x.png in Resources */,
-				3BE5E67F14AD482D00D8D292 /* PINViewDefault.xib in Resources */,
+				3BE5E67F14AD482D00D8D292 /* GCPINViewController~iphone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
