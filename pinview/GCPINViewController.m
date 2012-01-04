@@ -152,6 +152,9 @@
     self.inputField.hidden = YES;
     self.inputField.keyboardType = UIKeyboardTypeNumberPad;
     self.inputField.delegate = self;
+    self.inputField.secureTextEntry = YES;
+    self.inputField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.inputField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [self.inputField becomeFirstResponder];
 	
 }
