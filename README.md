@@ -25,7 +25,7 @@ Here are some quick examples. To see them in use, open the "SampleApp" Xcode pro
 
 ````objc
 GCPINViewController *PIN = [[GCPINViewController alloc]
-                            initWithNibName:@"PINViewDefault"
+                            initWithNibName:nil
                             bundle:nil
                             mode:GCPINViewControllerModeCreate];
 PIN.messageText = @"Create Passcode";
@@ -42,7 +42,7 @@ PIN.verifyBlock = ^(NSString *code) {
 
 ````objc
 GCPINViewController *PIN = [[GCPINViewController alloc]
-                            initWithNibName:@"PINViewDefault"
+                            initWithNibName:nil
                             bundle:nil
                             mode:GCPINViewControllerModeVerify];
 PIN.messageText = @"Check Passcode";
