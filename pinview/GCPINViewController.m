@@ -167,6 +167,14 @@
     self.labels = nil;
     self.text = nil;
 }
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        return UIInterfaceOrientationIsLandscape(orientation);
+    }
+    else {
+        return (orientation == UIInterfaceOrientationPortrait);
+    }
+}
 
 #pragma mark - overridden property accessors
 - (void)setMessageText:(NSString *)text {

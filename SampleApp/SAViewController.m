@@ -14,7 +14,7 @@
 
 - (IBAction)setPIN {
     GCPINViewController *PIN = [[GCPINViewController alloc]
-                                initWithNibName:@"PINViewDefault"
+                                initWithNibName:nil
                                 bundle:nil
                                 mode:GCPINViewControllerModeCreate];
     PIN.messageText = @"Enter a passcode";
@@ -30,7 +30,7 @@
 
 - (IBAction)checkPIN {
     GCPINViewController *PIN = [[GCPINViewController alloc]
-                                initWithNibName:@"PINViewDefault"
+                                initWithNibName:nil
                                 bundle:nil
                                 mode:GCPINViewControllerModeVerify];
     PIN.messageText = @"Enter your passcode";

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B9E653014B4ED1B00A2508F /* GCPINViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9E652F14B4ED1B00A2508F /* GCPINViewController~ipad.xib */; };
 		3BE5E65614AD45EE00D8D292 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE5E65514AD45EE00D8D292 /* UIKit.framework */; };
 		3BE5E65814AD45EE00D8D292 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE5E65714AD45EE00D8D292 /* Foundation.framework */; };
 		3BE5E65A14AD45EE00D8D292 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE5E65914AD45EE00D8D292 /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B9E652F14B4ED1B00A2508F /* GCPINViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GCPINViewController~ipad.xib"; sourceTree = "<group>"; };
 		3BE5E65114AD45EE00D8D292 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE5E65514AD45EE00D8D292 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3BE5E65714AD45EE00D8D292 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +122,7 @@
 				3BE5E67914AD482D00D8D292 /* PINBox.png */,
 				3BE5E67A14AD482D00D8D292 /* PINBox@2x.png */,
 				3BE5E67B14AD482D00D8D292 /* GCPINViewController~iphone.xib */,
+				3B9E652F14B4ED1B00A2508F /* GCPINViewController~ipad.xib */,
 			);
 			path = pinview;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				3BE5E67D14AD482D00D8D292 /* PINBox.png in Resources */,
 				3BE5E67E14AD482D00D8D292 /* PINBox@2x.png in Resources */,
 				3BE5E67F14AD482D00D8D292 /* GCPINViewController~iphone.xib in Resources */,
+				3B9E653014B4ED1B00A2508F /* GCPINViewController~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +272,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -279,7 +285,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
