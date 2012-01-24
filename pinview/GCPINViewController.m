@@ -46,6 +46,7 @@
 @synthesize errorLabel = __errorLabel;
 @synthesize inputField = __inputField;
 @synthesize messageText = __messageText;
+@synthesize confirmText = __confirmText;
 @synthesize errorText = __errorText;
 @synthesize labels = __labels;
 @synthesize mode = __mode;
@@ -85,6 +86,7 @@
     self.errorLabel = nil;
     self.inputField = nil;
     self.messageText = nil;
+    self.confirmText = nil;
     self.errorText = nil;
     self.labels = nil;
     self.text = nil;
@@ -200,6 +202,12 @@
             if (self.mode == GCPINViewControllerModeCreate) {
                 if (self.text == nil) {
                     self.text = self.inputField.text;
+                    
+                    // Display confirm text if it's been set
+                    if ( self.confirmText != nil ) {
+                        self.messageLabel.text = self.confirmText;
+                    }
+                    
                     [self resetInput];
                 }
                 else {
@@ -207,7 +215,10 @@
                         self.verifyBlock(self.inputField.text)) {
                         [self dismiss];
                     }
-                    else {
+                    else {                        
+                        // Reinstate original message text
+                        self.messageLabel.text = self.messageText;
+                        
                         [self wrong];
                     }
                 }

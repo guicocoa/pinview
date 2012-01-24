@@ -25,6 +25,7 @@
                                 bundle:nil
                                 mode:GCPINViewControllerModeCreate];
     PIN.messageText = @"Enter a passcode";
+    PIN.confirmText = @"Confirm your passcode";
     PIN.errorText = @"The passcodes do not match";
     PIN.title = @"Set Passcode";
     PIN.verifyBlock = ^(NSString *newCode) {
