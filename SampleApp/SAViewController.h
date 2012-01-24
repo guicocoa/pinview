@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SAViewController : UIViewController
+@interface SAViewController : UIViewController {
+    NSString *code;
+}
+
+@property (atomic, copy) NSString *code;
 
 - (IBAction)setPIN;
 - (IBAction)checkPIN;
