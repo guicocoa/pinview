@@ -33,6 +33,10 @@
         self.code = newCode;
         return YES;
     };
+    PIN.cancelBlock = ^ {
+        NSLog(@"Cancelling PIN setting");
+    };
+    PIN.cancelButtonVisible = YES;
     [PIN presentFromViewController:self animated:YES];
     [PIN release];
 }
@@ -49,6 +53,10 @@
         NSLog(@"checking code: %@", enteredCode);
         return [enteredCode isEqualToString:self.code];
     };
+    PIN.cancelBlock = ^ {
+        NSLog(@"Cancelling verification");
+    };
+    PIN.cancelButtonVisible = YES;
     [PIN presentFromViewController:self animated:YES];
     [PIN release];
 }

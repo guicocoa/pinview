@@ -29,6 +29,7 @@ typedef enum {
 } GCPINViewControllerMode;
 
 typedef BOOL (^GCPasscodeVerifyBlock) (NSString *code);
+typedef void (^GCPasscodeCancelBlock) ();
 
 /*
  
@@ -78,6 +79,13 @@ typedef BOOL (^GCPasscodeVerifyBlock) (NSString *code);
 
 /*
  
+ Called when cancelling out of passcode entry or verification.
+ 
+ */
+@property (nonatomic, copy) GCPasscodeCancelBlock cancelBlock;
+
+/*
+ 
  Refer to `GCPINViewControllerMode`. This can only be set through the
  designated initializer.
  
@@ -109,5 +117,7 @@ typedef BOOL (^GCPasscodeVerifyBlock) (NSString *code);
 @property (nonatomic, retain) IBOutlet UILabel *messageLabel;
 @property (nonatomic, retain) IBOutlet UILabel *errorLabel;
 @property (nonatomic, retain) IBOutlet UITextField *inputField;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
+@property (nonatomic, assign) BOOL cancelButtonVisible;
 
 @end

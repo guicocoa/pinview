@@ -52,6 +52,9 @@
 @synthesize mode = __mode;
 @synthesize text = __text;
 @synthesize verifyBlock = __verifyBlock;
+@synthesize cancelBlock = __cancelBlock;
+@synthesize cancelButton = __cancelButton;
+@synthesize cancelButtonVisible = __cancelButtonVisible;
 
 #pragma mark - object methods
 - (id)initWithNibName:(NSString *)nib bundle:(NSBundle *)bundle mode:(GCPINViewControllerMode)mode {
@@ -91,6 +94,8 @@
     self.labels = nil;
     self.text = nil;
     self.verifyBlock = nil;
+    self.cancelBlock = nil;
+    self.cancelButton = nil;
 	
     // super
     [super dealloc];
@@ -131,11 +136,22 @@
         [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     });
 }
+- (void)cancel {
+    __dismiss = YES;
+    if ( self.cancelBlock != nil ) {
+        self.cancelBlock();
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 #pragma mark - view lifecycle
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    
+
+    // wire up cancel button
+    self.cancelButton.target = self;
+    self.cancelButton.action = @selector(cancel);
+
     // setup labels list
     self.labels = [NSArray arrayWithObjects:
                    self.fieldOneLabel,
@@ -160,6 +176,11 @@
     [self.inputField becomeFirstResponder];
 	
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationItem.leftBarButtonItem = self.cancelButtonVisible ? self.cancelButton : nil;
+}
+
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	self.fieldOneLabel = nil;
@@ -171,6 +192,7 @@
     self.inputField = nil;
     self.labels = nil;
     self.text = nil;
+    self.cancelButton = nil;
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -191,6 +213,10 @@
 	[__errorText release];
     __errorText = [text copy];
     self.errorLabel.text = __errorText;
+}
+- (void)setCancelButtonVisible:(BOOL)cancelButtonVisible {
+    __cancelButtonVisible = cancelButtonVisible;
+    self.navigationItem.leftBarButtonItem = cancelButtonVisible ? self.cancelButton : nil;
 }
 
 #pragma mark - text field methods
