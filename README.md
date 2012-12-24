@@ -1,5 +1,9 @@
 # Passcode view
 
+## Notice
+
+I will not maintain this library any longer. Instead, I would suggest you look at [this one](https://github.com/project-imas/app-password) &mdash; also written by me &mdash; that is much more modern, flexible, and easily integrated into apps. It departs a bit from the system passcode view so that it can be highly customized.
+
 ## About
 
 This project gives you a passcode control that can be dropped into any iOS app. It behaves exactly like the passcode screens that can be seen by going to Settings > General > Passcode Lock.
