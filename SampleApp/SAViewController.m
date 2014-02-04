@@ -12,18 +12,31 @@
 
 @implementation SAViewController
 
+@synthesize code;
+
+- (void)viewDidLoad {
+    // Set default code
+    self.code = @"0187";
+}
+
 - (IBAction)setPIN {
     GCPINViewController *PIN = [[GCPINViewController alloc]
                                 initWithNibName:nil
                                 bundle:nil
                                 mode:GCPINViewControllerModeCreate];
     PIN.messageText = @"Enter a passcode";
+    PIN.confirmText = @"Confirm your passcode";
     PIN.errorText = @"The passcodes do not match";
     PIN.title = @"Set Passcode";
-    PIN.verifyBlock = ^(NSString *code) {
-        NSLog(@"setting code: %@", code);
+    PIN.verifyBlock = ^(NSString *newCode) {
+        NSLog(@"setting code: %@", newCode);
+        self.code = newCode;
         return YES;
     };
+    PIN.cancelBlock = ^ {
+        NSLog(@"Cancelling PIN setting");
+    };
+    PIN.cancelButtonVisible = YES;
     [PIN presentFromViewController:self animated:YES];
     [PIN release];
 }
@@ -36,10 +49,14 @@
     PIN.messageText = @"Enter your passcode";
     PIN.errorText = @"Incorrect passcode";
     PIN.title = @"Enter Passcode";
-    PIN.verifyBlock = ^(NSString *code) {
-        NSLog(@"checking code: %@", code);
-        return [code isEqualToString:@"0187"];
+    PIN.verifyBlock = ^(NSString *enteredCode) {
+        NSLog(@"checking code: %@", enteredCode);
+        return [enteredCode isEqualToString:self.code];
     };
+    PIN.cancelBlock = ^ {
+        NSLog(@"Cancelling verification");
+    };
+    PIN.cancelButtonVisible = YES;
     [PIN presentFromViewController:self animated:YES];
     [PIN release];
 }

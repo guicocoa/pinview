@@ -29,6 +29,7 @@ typedef enum {
 } GCPINViewControllerMode;
 
 typedef BOOL (^GCPasscodeVerifyBlock) (NSString *code);
+typedef void (^GCPasscodeCancelBlock) ();
 
 /*
  
@@ -51,6 +52,12 @@ typedef BOOL (^GCPasscodeVerifyBlock) (NSString *code);
 
 /*
  
+ Set the text to display below the input area when confirming a set PIN 
+ */
+@property (nonatomic, copy) NSString *confirmText;
+
+/*
+ 
  Set the text to display below the input area when the passcode fails
  verification.
  
@@ -69,6 +76,13 @@ typedef BOOL (^GCPasscodeVerifyBlock) (NSString *code);
  
  */
 @property (nonatomic, copy) GCPasscodeVerifyBlock verifyBlock;
+
+/*
+ 
+ Called when cancelling out of passcode entry or verification.
+ 
+ */
+@property (nonatomic, copy) GCPasscodeCancelBlock cancelBlock;
 
 /*
  
@@ -103,5 +117,7 @@ typedef BOOL (^GCPasscodeVerifyBlock) (NSString *code);
 @property (nonatomic, retain) IBOutlet UILabel *messageLabel;
 @property (nonatomic, retain) IBOutlet UILabel *errorLabel;
 @property (nonatomic, retain) IBOutlet UITextField *inputField;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
+@property (nonatomic, assign) BOOL cancelButtonVisible;
 
 @end
